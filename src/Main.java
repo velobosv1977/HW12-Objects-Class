@@ -2,14 +2,25 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Author dostoyevskiy = new Author("Фёдор", "Михайлович", "Достоевский");
+        Author karamzin = new Author("Николай", "Михайлович", "Карамзин");
+        Author gogol = new Author("Николай", "Васильевич", "Гоголь");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Book idiot = new Book("Идиот", dostoyevskiy, 1870);
+        Book idiot2 = new Book("Идиот", dostoyevskiy, 1870);
+        Book historyOfRussia = new Book("История государства Российского", karamzin, 1845);
+        Book gogolCollectedWork = new Book("Собрание сочинений", gogol, 1842);
+
+        System.out.println(idiot);
+        System.out.println(historyOfRussia);
+        System.out.println(gogolCollectedWork);
+
+        System.out.println("Сравнение издания <<Идиот>>" + idiot.equals(idiot2));
+
+        idiot.setPublicationData(1956);
+
+        System.out.println("Сравнение издания <<Идиот>>" + idiot.equals(idiot2));
+        System.out.println(idiot.getBookName() + "  " + idiot.getPublicationData());
+
     }
 }
